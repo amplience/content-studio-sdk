@@ -1,0 +1,49 @@
+{
+  "name": "@amplience/content-studio-sdk",
+  "version": "0.1.0",
+  "type": "module",
+  "license": "Apache-2.0",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/cjs/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      }
+    }
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "npm-run-all clean build:cjs build:esm",
+    "build:cjs": "tsc --project tsconfig.json --module commonjs --outDir ./dist/cjs/",
+    "build:esm": "tsc --project tsconfig.json --module es2022 --outDir ./dist/esm/",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "lint": "eslint --ext js,ts,tsx ."
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.6.16",
+    "@storybook/addon-interactions": "^7.6.16",
+    "@storybook/addon-links": "^7.6.16",
+    "@storybook/blocks": "^7.6.16",
+    "@storybook/html": "^7.6.16",
+    "@storybook/html-vite": "^7.6.16",
+    "@storybook/test": "^7.6.16",
+    "copyfiles": "^2.4.1",
+    "npm-run-all": "^4.1.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rimraf": "5.0.5",
+    "storybook": "^7.6.16",
+    "typescript": ""
+  },
+  "dependencies": {
+    "message-event-channel": "^1.1.0"
+  }
+}
