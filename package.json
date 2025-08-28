@@ -44,6 +44,6 @@
     "typescript": ""
   },
   "dependencies": {
-    "message-event-channel": "^1.1.0"
+    "message-event-channel": "^1.2.0"
   }
 }
